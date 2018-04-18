@@ -275,7 +275,7 @@ body #RESShortcutsSort:hover {
 
 #header-img-a:after {
     color: #fff;
-    opacity: .3;
+    opacity: .7;
     content: "REDDIT";
     display: block;
     font-size: 11px;
@@ -478,7 +478,6 @@ body #userbarToggle {
     left: calc(50% - 120px);
     letter-spacing: .5px;
     padding: 12px;
-    pointer-events: none;
     position: fixed;
     text-align: center;
     text-indent: 0;
@@ -559,13 +558,15 @@ body #userbarToggle {
 .tabmenu li a {
     background: 0 0;
     padding: 0 8px;
-    opacity: .3;
+    opacity: .7;
     color: #fff
 }
 
 #search input[type=submit]:hover,
 .tabmenu li a:hover,
-.tabmenu li.selected a {
+.tabmenu li.selected a,
+.res-nightmode .tabmenu li a:hover,
+.res-nightmode .tabmenu li.selected a {
     opacity: 1
 }
 
@@ -724,7 +725,7 @@ body:not(.search-page) #search {
     position: absolute;
     right: 0;
     top: 200px;
-    width: 320px;
+    width: 332px;
     z-index: 2
 }
 
@@ -735,9 +736,13 @@ body:not(.search-page) #search input[type=text] {
     height: 29px;
     transition: .3s ease-in-out;
     transition-property: color, font-size, padding, width;
-    width: 320px;
-    background: #072E49;
+    width: 332px;
+    background: #144263;
     font-size: 11px
+}
+
+.res-nightmode body:not(.search-page) #search input[type=text] {
+    background: #072E49;
 }
 
 #search input[type=text]:focus {
@@ -750,7 +755,7 @@ body:not(.search-page) #search input[type=text] {
 }
 
 #search input[type=submit] {
-    opacity: .6
+    opacity: .7
 }
 
 #search input[type=text]:active+input[type=submit],
@@ -761,25 +766,25 @@ body:not(.search-page) #search input[type=text] {
 
 .side form input[type=text]::-webkit-input-placeholder {
     color: #fff;
-    opacity: .3;
+    opacity: .7;
     text-transform: uppercase
 }
 
 .side form input[type=text]:-moz-placeholder {
     color: #fff;
-    opacity: .3;
+    opacity: .7;
     text-transform: uppercase
 }
 
 .side form input[type=text]::-moz-placeholder {
     color: #fff;
-    opacity: .3;
+    opacity: .7;
     text-transform: uppercase
 }
 
 .side form input[type=text]:-ms-input-placeholder {
     color: #fff;
-    opacity: .3;
+    opacity: .7;
     text-transform: uppercase
 }
 
@@ -2245,8 +2250,6 @@ body.res-betteReddit-showLastEditedTimestamp .edited-timestamp[title]::after {
     padding: 0 3px
 }
 
-.comments-page .spoiler-stamp,
-.comments-page>.content>#siteTable .entry .buttons .first,
 .entry .buttons .share,
 .rank {
     display: none
@@ -2320,7 +2323,7 @@ body.res-betteReddit-showLastEditedTimestamp .edited-timestamp[title]::after {
 }
 
 .entry .buttons li a {
-    color: #81858A;
+    color: #232323;
     cursor: default;
     padding: 0;
     text-transform: capitalize
@@ -2466,7 +2469,7 @@ body.res-nightmode .arrow.upmod:before {
 .linkflairlabel {
     background: 0 0;
     border: none;
-    color: #6A6F75;
+    color: #232323;
     font-size: inherit;
     margin-right: 4px;
     max-width: none;
@@ -2843,13 +2846,13 @@ a[href^="#logos"]:before {
 }
 
 .commentarea .entry .flair {
-    margin-top: -9px;
+    margin-top: -10px;
     font-size: 0
 }
 
 .commentarea .entry .flair:after,
 .commentarea .entry .flair:before {
-    margin-top: 4px
+    margin-top: 5px
 }
 
 .commentarea .entry .flair:hover:not([title=""]):after,
@@ -2872,8 +2875,13 @@ a[href^="#logos"]:before {
     font-size: 12px;
     position: relative;
     vertical-align: baseline;
-    height: 12px;
+    height: 14px;
+    line-height: 32px;
     width: auto
+}
+
+.res-nightmode .commentarea .entry .flair:hover:not([title=""]) {
+    color: #DDD;
 }
 
 .comment .flair+.author,
@@ -5102,4 +5110,12 @@ body.res-nightmode {
     border: 1px solid #f6e69f!important;
     background: 0 0;
     color: #f6e69f!important
+}
+
+.res-nightmode .pretty-form {
+    background: #191919;
+}
+
+.comment .entry .md a:visited {
+    color: #3f6dbf!important;
 }
