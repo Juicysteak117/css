@@ -1985,6 +1985,7 @@ body.res-nightmode .expando-button.collapsed::after, body.res-nightmode .expando
 .link .thumbnail {
 	background: #efefef url(%%thumbnails%%) no-repeat;
 	background-position: -130px 0;
+	pointer-events: none;
 }
 body.res-nightmode .link .thumbnail {
 	background-color: #313131;
@@ -4821,3 +4822,5 @@ body.res-nightmode {
 .comment .entry .md a:visited {
     color: #3f6dbf!important; /* Fixes links not changing color */
 }
+
+
